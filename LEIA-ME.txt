@@ -1,0 +1,13 @@
+FAST STORE — FIREBASE
+
+1. Abra admin.html no site publicado, faça login com o usuário criado no Firebase Authentication.
+2. Copie o UID exibido no painel. No Firebase Console > Firestore Database > Regras, cole o conteúdo de firestore.rules, substituindo COLE_SEU_UID_AQUI pelo UID. Publique as regras. NÃO use regras abertas para escrita.
+3. No Firebase Console > Authentication > Settings > Authorized domains, adicione hypestorebr.github.io se ainda não estiver listado.
+4. No GitHub fast-store, envie index.html, admin.html, firebase-config.js e logo.jpg à raiz, substituindo index.html. O painel admin.html é público como página, mas só a conta autorizada pelas regras pode modificar os dados.
+5. Visite https://hypestorebr.github.io/fast-store/admin.html, entre e cadastre a conta. As alterações aparecem em tempo real na loja.
+
+OBSERVAÇÕES:
+- Fotos são compactadas e armazenadas como texto no Firestore. Adequado para catálogo pequeno; para catálogo grande, migrar imagens para Firebase Storage ou outro serviço de mídia.
+- A versão Firebase substitui o antigo catalogo.json. O catálogo anterior não é importado automaticamente.
+- Se aparecer permission-denied, verifique UID e regras.
+- Nunca publique senha de administrador nem chave privada de serviço.
